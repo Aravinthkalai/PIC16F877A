@@ -1,0 +1,30 @@
+#include<htc.h>
+#define led RC0
+#define sw RD0
+void delay(int a);
+void main()
+{
+	TRISD=0XFF;
+	TRISC=0X00;
+	PORTD=0XFF;
+	PORTC=0XFF;
+	while(1)
+	{
+	if(sw==0)
+	{
+		delay(500);
+		led=0;
+	}
+}
+}
+void delay(int a)
+{
+	int i,j;
+	for(i=0;i<a;i++)
+	{
+		for(j=0;j<1000;j++)
+		{
+		}
+		
+	}
+}

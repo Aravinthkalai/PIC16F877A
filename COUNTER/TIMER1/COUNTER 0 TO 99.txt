@@ -1,0 +1,22 @@
+#include<htc.h>
+int arr[]={0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,0x80,0x90};
+void main()
+{
+	TRISC0=1;
+	TRISD=0X00;
+	TRISB=0X00;
+	PORTD=0X00;
+	PORTB=0XFF;
+	T1OSCEN=1;
+	TMR1CS=1;
+	T1CKPS1=0;
+	T1CKPS0=0;
+	TMR1H=0X00;
+	TMR1L=0X00;
+	TMR1ON=1;
+	while(1)
+	{
+		PORTB=arr[TMR1L/10];
+		PORTD=arr[TMR1L%10];
+	}
+}

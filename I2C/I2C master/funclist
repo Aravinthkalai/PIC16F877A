@@ -1,0 +1,9 @@
+_main: CODE, 1830 0 106
+_I2C_Write: CODE, 1647 0 10
+___lmul: CODE, 1673 0 74
+_I2C_End: CODE, 1638 0 9
+___lldiv: CODE, 1936 0 112
+_I2C_Hold: CODE, 1657 0 16
+_I2C_Initialize: CODE, 1747 0 83
+_I2C_Begin: CODE, 1629 0 9
+Total: 419

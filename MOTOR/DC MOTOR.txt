@@ -1,0 +1,26 @@
+#include<htc.h>
+#define dcmotor PORTD
+void delay(int a);
+void main()
+{
+	TRISD=0X00;
+	PORTD=0XFF;
+	while(1)
+	{
+		dcmotor=0x05;
+		delay(1000);
+		dcmotor=0x0a;
+		delay(1000);
+	}
+}
+
+void delay(int a)
+{
+	int i,j;
+		for(i=0;i<a;i++)
+	{
+		for(j=0;j<1000;j++)
+		{
+		}
+	}
+}

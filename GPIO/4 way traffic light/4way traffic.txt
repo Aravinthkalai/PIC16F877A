@@ -1,0 +1,80 @@
+#include<htc.h>
+#define R1 RD0
+#define G1 RD1
+#define R2 RD2
+#define G2 RD3
+#define R3 RD4
+#define G3 RD5
+#define R4 RD6
+#define G4 RD7
+void delay(int a);
+void seg();
+void task1();
+void task2();
+void task3();
+void task4();
+void main()
+{
+	TRISD=0X00;
+	TRISC=0X00;
+	while(1)
+	{
+		task1();
+		task2();
+		task3();
+		task4();
+	}
+}	
+	void task1()
+	{
+	G1=1;
+	R1=0;
+	R2=R3=R4=1;
+	G2=G3=G4=0;
+	seg();
+	}
+	void task2()
+	{
+	G2=1;
+	R2=0;
+	R1=R3=R4=1;
+	G1=G3=G4=0;
+	seg();
+	}
+	void task3()
+	{
+	G3=1;
+	R3=0;
+	R1=R2=R4=1;
+	G1=G2=G4=0;
+	seg();
+	}
+	void task4()
+	{
+	G4=1;
+	R4=0;
+	R1=R2=R3=1;
+	G1=G2=G3=0;
+	seg();
+	}
+void seg()
+{
+	int l;
+	int array[]={0x10,0x00,0xf8,0x03,0x12,0x19,0x30,0x24,0xf9,0x40};
+	for(l=0;l<=9;l++)
+	{
+		PORTC=array[l];
+		delay(100);
+	}
+}
+void delay(int a)
+{
+	int i,j;
+	for(i=0;i<a;i++)
+	{
+		for(j=0;j<1000;j++)
+		{
+		}
+		
+	}
+}

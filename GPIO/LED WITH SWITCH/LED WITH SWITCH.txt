@@ -1,0 +1,33 @@
+#include<htc.h>
+void main()
+{
+	TRISD=0X00;
+	TRISC=0XFF;
+	while(1)
+	{
+		PORTD=PORTC;
+	}
+}
+
+
+//using if class
+
+//#include<htc.h>
+#define a RC0
+#define b RD0
+void main()
+{
+	TRISD=0X00;
+	TRISC=0XFF;
+	while(1)
+	{
+	if(a==1)
+{
+b=1;
+}
+else
+{
+b=0;
+}
+	}
+}\\

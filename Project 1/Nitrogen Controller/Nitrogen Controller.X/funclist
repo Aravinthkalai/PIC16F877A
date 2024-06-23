@@ -1,0 +1,17 @@
+___awdiv: CODE, 1464 0 116
+_key_check: CODE, 881 0 45
+_delay: CODE, 926 0 62
+_SPI_init: CODE, 837 0 44
+___awmod: CODE, 1248 0 104
+_main: CODE, 796 0 41
+_SPI_Initialize_Master: CODE, 658 0 13
+_SPI_Write: CODE, 728 0 29
+___lmul: CODE, 988 0 74
+_adc: CODE, 1751 0 297
+___lldiv: CODE, 1352 0 112
+_LED_init: CODE, 639 0 9
+_checkpressure: CODE, 1062 0 92
+___llmod: CODE, 1154 0 94
+_acd_init: CODE, 648 0 10
+_userinput: CODE, 1580 0 171
+Total: 1313

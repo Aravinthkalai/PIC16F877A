@@ -1,0 +1,20 @@
+#include<htc.h>
+void main()
+{
+	TRISC=0X00;
+	PORTC=0XFF;
+	INTCON=0XC0;
+	PIE1=0X01;
+	T1CON=0X30;
+	TMR1H=0X0B;
+	TMR1L=0XDC;
+	TMR1ON=1;
+	while(1)
+	{
+	}
+}
+void interrupt isr()
+{
+	PORTC=~PORTC;
+	TMR1IF=0;
+}

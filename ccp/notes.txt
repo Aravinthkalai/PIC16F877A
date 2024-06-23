@@ -1,0 +1,14 @@
+PWM Signal Generation
+ 	Once the PWM is configured and Timer2 is enabled, TMR2 starts incrementing depending on the pre-scaler. Once the TMR2 value is equal to duty Cycle (CCPR1L+CCP1CON<5:4>) the PWM pin will be pulled LOW. The timer still continues to increment till it matches with the period PR2. After which the PWM pin will be pulled HIGH and TMR2 is reset for next cycle.
+
+
+Duty Cycle: The percentage of time for which the PWM signal will be ON/HIGH. $$DutyCycle = (Ton/(Ton+Toff))*100 = (Ton/Period) * 100 $$ 
+
+Period: The cycle time of the signal which is nothing but the sum of Ton and Toff period.
+Period= Ton+Toff
+Freq of Pwm signal = 1/Period.
+
+SR
+S     R   OUTPUT
+1      0	1
+0       1	0

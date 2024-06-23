@@ -1,0 +1,17 @@
+#include<htc.h>
+void delay();
+void main()
+{
+	TRISC=0X00;
+	PORTC=0X00;
+	delay();
+	PORTC=0XFF;
+	delay();
+}	
+	void delay()
+	{
+	OPTION_REG=0X04;
+	TMR0=100;
+	while(T0IF==0);
+	T0IF=0;
+	}

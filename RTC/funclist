@@ -1,0 +1,17 @@
+_I2C_stop: CODE, 1250 0 9
+_string: CODE, 1441 0 39
+_delay: CODE, 1535 0 62
+_I2C_Master_Wait: CODE, 1296 0 15
+_I2C_Master_Init: CODE, 1269 0 13
+_main: CODE, 1597 0 451
+_rtc_read: CODE, 1480 0 55
+_I2C_start: CODE, 1232 0 9
+_I2C_restart: CODE, 1241 0 9
+_data: CODE, 1370 0 21
+_lo: CODE, 1282 0 14
+_I2C_Read_Byte: CODE, 1391 0 25
+_up: CODE, 1328 0 21
+_cmd: CODE, 1349 0 21
+_I2C_write: CODE, 1311 0 17
+_lcd_init: CODE, 1416 0 25
+Total: 806

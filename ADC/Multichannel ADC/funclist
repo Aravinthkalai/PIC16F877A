@@ -1,0 +1,11 @@
+_delay: CODE, 1526 0 62
+_dat: CODE, 1447 0 21
+_main: CODE, 1803 0 91
+___lwdiv: CODE, 1725 0 78
+_adc: CODE, 1656 0 69
+_lcd_int: CODE, 1468 0 25
+_show: CODE, 1493 0 33
+_adc_con: CODE, 1894 0 154
+___lwmod: CODE, 1588 0 68
+_cmd: CODE, 1426 0 21
+Total: 622

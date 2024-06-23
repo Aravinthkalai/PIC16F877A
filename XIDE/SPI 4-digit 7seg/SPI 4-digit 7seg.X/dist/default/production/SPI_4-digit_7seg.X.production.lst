@@ -1,0 +1,847 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.83 build 10920 
+                                                                                               Sat Sep 26 12:34:54 2020
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 10920"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           	FNCALL	_main,_SPI_init
+    43                           	FNCALL	_main,_SPI_Write
+    44                           	FNCALL	_SPI_init,_SPI_Initialize_Master
+    45                           	FNCALL	_SPI_init,_SPI_Write
+    46                           	FNROOT	_main
+    47                           	global	_arr
+    48                           	global	_ar2
+    49                           psect	idataBANK0,class=CODE,space=0,delta=2
+    50                           global __pidataBANK0
+    51  074C                     __pidataBANK0:
+    52                           	file	"SPI 4-digit 7seg.c"
+    53                           	line	9
+    54                           
+    55                           ;initializer for _arr
+    56  074C  343F               	retlw	03Fh
+    57  074D  3400               	retlw	0
+    58                           
+    59  074E  3406               	retlw	06h
+    60  074F  3400               	retlw	0
+    61                           
+    62  0750  345B               	retlw	05Bh
+    63  0751  3400               	retlw	0
+    64                           
+    65  0752  344F               	retlw	04Fh
+    66  0753  3400               	retlw	0
+    67                           
+    68  0754  3466               	retlw	066h
+    69  0755  3400               	retlw	0
+    70                           
+    71  0756  346D               	retlw	06Dh
+    72  0757  3400               	retlw	0
+    73                           
+    74  0758  347C               	retlw	07Ch
+    75  0759  3400               	retlw	0
+    76                           
+    77  075A  3407               	retlw	07h
+    78  075B  3400               	retlw	0
+    79                           
+    80  075C  347F               	retlw	07Fh
+    81  075D  3400               	retlw	0
+    82                           
+    83  075E  346F               	retlw	06Fh
+    84  075F  3400               	retlw	0
+    85                           
+    86                           	line	10
+    87                           
+    88                           ;initializer for _ar2
+    89  0760  3401               	retlw	01h
+    90  0761  3400               	retlw	0
+    91                           
+    92  0762  3402               	retlw	02h
+    93  0763  3400               	retlw	0
+    94                           
+    95  0764  3403               	retlw	03h
+    96  0765  3400               	retlw	0
+    97                           
+    98  0766  3404               	retlw	04h
+    99  0767  3400               	retlw	0
+   100                           
+   101  0768  3405               	retlw	05h
+   102  0769  3400               	retlw	0
+   103                           
+   104  076A  3406               	retlw	06h
+   105  076B  3400               	retlw	0
+   106                           
+   107  076C  3407               	retlw	07h
+   108  076D  3400               	retlw	0
+   109                           
+   110  076E  3408               	retlw	08h
+   111  076F  3400               	retlw	0
+   112                           
+   113                           	global	_SSPBUF
+   114  0013                     _SSPBUF	set	19
+   115                           	global	_SSPCON
+   116  0014                     _SSPCON	set	20
+   117                           	global	_CARRY
+   118  0018                     _CARRY	set	24
+   119                           	global	_GIE
+   120  005F                     _GIE	set	95
+   121                           	global	_RC2
+   122  003A                     _RC2	set	58
+   123                           	global	_SSPSTAT
+   124  0094                     _SSPSTAT	set	148
+   125                           	global	_SSPSTATbits
+   126  0094                     _SSPSTATbits	set	148
+   127                           	global	_TRISC2
+   128  043A                     _TRISC2	set	1082
+   129                           	global	_TRISC3
+   130  043B                     _TRISC3	set	1083
+   131                           	global	_TRISC5
+   132  043D                     _TRISC5	set	1085
+   133                           	global	_EEADR
+   134  010D                     _EEADR	set	269
+   135                           	global	_EEDATA
+   136  010C                     _EEDATA	set	268
+   137                           	global	_EECON1
+   138  018C                     _EECON1	set	396
+   139                           	global	_EECON2
+   140  018D                     _EECON2	set	397
+   141                           	global	_RD
+   142  0C60                     _RD	set	3168
+   143                           	global	_WR
+   144  0C61                     _WR	set	3169
+   145                           	global	_WREN
+   146  0C62                     _WREN	set	3170
+   147                           	file	"C:\Users\Aravinth\AppData\Local\Temp\ss4."
+   148                           	line	#
+   149                           psect cinit,class=CODE,delta=2
+   150                           global start_initialization
+   151  070A                     start_initialization:
+   152                           
+   153                           psect	dataBANK0,class=BANK0,space=1
+   154                           global __pdataBANK0
+   155  0020                     __pdataBANK0:
+   156                           	file	"SPI 4-digit 7seg.c"
+   157                           	line	9
+   158  0020                     _arr:
+   159  0020                            ds      20
+   160                           
+   161                           psect	dataBANK0
+   162                           	file	"SPI 4-digit 7seg.c"
+   163                           	line	10
+   164  0034                     _ar2:
+   165  0034                            ds      16
+   166                           
+   167                           global btemp
+   168                           psect inittext,class=CODE,delta=2
+   169                           global init_fetch,btemp
+   170                           ;	Called with low address in FSR and high address in W
+   171  071C                     init_fetch:
+   172  071C  087E               	movf btemp,w
+   173  071D  008A               	movwf pclath
+   174  071E  087F               	movf btemp+1,w
+   175  071F  0082               	movwf pc
+   176                           global init_ram
+   177                           ;Called with:
+   178                           ;	high address of idata address in btemp 
+   179                           ;	low address of idata address in btemp+1 
+   180                           ;	low address of data in FSR
+   181                           ;	high address + 1 of data in btemp-1
+   182  0720                     init_ram:
+   183  0720  120A  118A  271C   	fcall init_fetch
+              120A  118A         
+   184  0725  0080               	movwf indf,f
+   185  0726  0A84               	incf fsr,f
+   186  0727  0804               	movf fsr,w
+   187  0728  067D               	xorwf btemp-1,w
+   188  0729  1903               	btfsc status,2
+   189  072A  3400               	retlw 0
+   190  072B  0AFF               	incf btemp+1,f
+   191  072C  1903               	btfsc status,2
+   192  072D  0AFE               	incf btemp,f
+   193  072E  2F20               	goto init_ram
+   194                           ; Initialize objects allocated to BANK0
+   195                           psect cinit,class=CODE,delta=2
+   196                           global init_ram, __pidataBANK0
+   197  070A  1383               	bcf	status, 7	;select IRP bank0
+   198  070B  3044               	movlw low(__pdataBANK0+36)
+   199  070C  00FD               	movwf btemp-1,f
+   200  070D  3007               	movlw high(__pidataBANK0)
+   201  070E  00FE               	movwf btemp,f
+   202  070F  304C               	movlw low(__pidataBANK0)
+   203  0710  00FF               	movwf btemp+1,f
+   204  0711  3020               	movlw low(__pdataBANK0)
+   205  0712  0084               	movwf fsr,f
+   206  0713  120A  118A  2720   	fcall init_ram
+              120A  118A         
+   207                           psect cinit,class=CODE,delta=2
+   208                           global end_of_initialization
+   209                           
+   210                           ;End of C runtime variable initialization code
+   211                           
+   212  0718                     end_of_initialization:
+   213  0718  0183               clrf status
+   214  0719  120A  118A  2F96   ljmp _main	;jump to C main() function
+   215                           psect	cstackCOMMON,class=COMMON,space=1
+   216                           global __pcstackCOMMON
+   217  0070                     __pcstackCOMMON:
+   218                           	global	?_SPI_init
+   219  0070                     ?_SPI_init:	; 0 bytes @ 0x0
+   220                           	global	?_SPI_Write
+   221  0070                     ?_SPI_Write:	; 0 bytes @ 0x0
+   222                           	global	?_SPI_Initialize_Master
+   223  0070                     ?_SPI_Initialize_Master:	; 0 bytes @ 0x0
+   224                           	global	??_SPI_Initialize_Master
+   225  0070                     ??_SPI_Initialize_Master:	; 0 bytes @ 0x0
+   226                           	global	?_main
+   227  0070                     ?_main:	; 0 bytes @ 0x0
+   228                           	global	SPI_Write@data
+   229  0070                     SPI_Write@data:	; 1 bytes @ 0x0
+   230  0070                     	ds	1
+   231                           	global	??_SPI_Write
+   232  0071                     ??_SPI_Write:	; 0 bytes @ 0x1
+   233                           	global	SPI_Write@cmd
+   234  0071                     SPI_Write@cmd:	; 1 bytes @ 0x1
+   235  0071                     	ds	1
+   236                           	global	??_SPI_init
+   237  0072                     ??_SPI_init:	; 0 bytes @ 0x2
+   238  0072                     	ds	1
+   239                           	global	??_main
+   240  0073                     ??_main:	; 0 bytes @ 0x3
+   241  0073                     	ds	1
+   242 ;;Data sizes: Strings 0, constant 0, data 36, bss 0, persistent 0 stack 0
+   243 ;;Auto spaces:   Size  Autos    Used
+   244 ;; COMMON          14      4       4
+   245 ;; BANK0           80      0      36
+   246 ;; BANK1           80      0       0
+   247 ;; BANK3           96      0       0
+   248 ;; BANK2           96      0       0
+   249                           
+   250 ;;
+   251 ;; Pointer list with targets:
+   252                           
+   253                           
+   254                           
+   255 ;;
+   256 ;; Critical Paths under _main in COMMON
+   257 ;;
+   258 ;;   _main->_SPI_init
+   259 ;;   _SPI_init->_SPI_Write
+   260 ;;
+   261 ;; Critical Paths under _main in BANK0
+   262 ;;
+   263 ;;   None.
+   264 ;;
+   265 ;; Critical Paths under _main in BANK1
+   266 ;;
+   267 ;;   None.
+   268 ;;
+   269 ;; Critical Paths under _main in BANK3
+   270 ;;
+   271 ;;   None.
+   272 ;;
+   273 ;; Critical Paths under _main in BANK2
+   274 ;;
+   275 ;;   None.
+   276                           
+   277 ;;
+   278 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   279 ;;
+   280                           
+   281 ;;
+   282 ;;Call Graph Tables:
+   283 ;;
+   284 ;; ---------------------------------------------------------------------------------
+   285 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   286 ;; ---------------------------------------------------------------------------------
+   287 ;; (0) _main                                                 1     1      0      60
+   288 ;;                                              3 COMMON     1     1      0
+   289 ;;                           _SPI_init
+   290 ;;                          _SPI_Write
+   291 ;; ---------------------------------------------------------------------------------
+   292 ;; (1) _SPI_init                                             1     1      0      30
+   293 ;;                                              2 COMMON     1     1      0
+   294 ;;              _SPI_Initialize_Master
+   295 ;;                          _SPI_Write
+   296 ;; ---------------------------------------------------------------------------------
+   297 ;; (2) _SPI_Initialize_Master                                0     0      0       0
+   298 ;; ---------------------------------------------------------------------------------
+   299 ;; (1) _SPI_Write                                            2     1      1      30
+   300 ;;                                              0 COMMON     2     1      1
+   301 ;; ---------------------------------------------------------------------------------
+   302 ;; Estimated maximum stack depth 2
+   303 ;; ---------------------------------------------------------------------------------
+   304                           
+   305 ;; Call Graph Graphs:
+   306                           
+   307 ;; _main (ROOT)
+   308 ;;   _SPI_init
+   309 ;;     _SPI_Initialize_Master
+   310 ;;     _SPI_Write
+   311 ;;   _SPI_Write
+   312 ;;
+   313                           
+   314 ;; Address spaces:
+   315                           
+   316 ;;Name               Size   Autos  Total    Cost      Usage
+   317 ;;BANK3               60      0       0       9        0.0%
+   318 ;;BITBANK3            60      0       0       8        0.0%
+   319 ;;SFR3                 0      0       0       4        0.0%
+   320 ;;BITSFR3              0      0       0       4        0.0%
+   321 ;;BANK2               60      0       0      11        0.0%
+   322 ;;BITBANK2            60      0       0      10        0.0%
+   323 ;;SFR2                 0      0       0       5        0.0%
+   324 ;;BITSFR2              0      0       0       5        0.0%
+   325 ;;SFR1                 0      0       0       2        0.0%
+   326 ;;BITSFR1              0      0       0       2        0.0%
+   327 ;;BANK1               50      0       0       7        0.0%
+   328 ;;BITBANK1            50      0       0       6        0.0%
+   329 ;;CODE                 0      0       0       0        0.0%
+   330 ;;DATA                 0      0      2A      12        0.0%
+   331 ;;ABS                  0      0      28       3        0.0%
+   332 ;;NULL                 0      0       0       0        0.0%
+   333 ;;STACK                0      0       2       2        0.0%
+   334 ;;BANK0               50      0      24       5       45.0%
+   335 ;;BITBANK0            50      0       0       4        0.0%
+   336 ;;SFR0                 0      0       0       1        0.0%
+   337 ;;BITSFR0              0      0       0       1        0.0%
+   338 ;;COMMON               E      4       4       1       28.6%
+   339 ;;BITCOMMON            E      0       0       0        0.0%
+   340 ;;EEDATA             100      0       0       0        0.0%
+   341                           
+   342                           	global	_main
+   343                           psect	maintext,global,class=CODE,delta=2
+   344                           global __pmaintext
+   345  0796                     __pmaintext:
+   346                           
+   347 ;; *************** function _main *****************
+   348 ;; Defined at:
+   349 ;;		line 18 in file "SPI 4-digit 7seg.c"
+   350 ;; Parameters:    Size  Location     Type
+   351 ;;		None
+   352 ;; Auto vars:     Size  Location     Type
+   353 ;;		None
+   354 ;; Return value:  Size  Location     Type
+   355 ;;		None               void
+   356 ;; Registers used:
+   357 ;;		wreg, status,2, status,0, pclath, cstack
+   358 ;; Tracked objects:
+   359 ;;		On entry : 17F/0
+   360 ;;		On exit  : 0/0
+   361 ;;		Unchanged: 0/0
+   362 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   363 ;;      Params:         0       0       0       0       0
+   364 ;;      Locals:         0       0       0       0       0
+   365 ;;      Temps:          1       0       0       0       0
+   366 ;;      Totals:         1       0       0       0       0
+   367 ;;Total ram usage:        1 bytes
+   368 ;; Hardware stack levels required when called:    2
+   369 ;; This function calls:
+   370 ;;		_SPI_init
+   371 ;;		_SPI_Write
+   372 ;; This function is called by:
+   373 ;;		Startup code after reset
+   374 ;; This function uses a non-reentrant model
+   375 ;;
+   376                           psect	maintext
+   377                           	file	"SPI 4-digit 7seg.c"
+   378                           	line	18
+   379                           	global	__size_of_main
+   380  006A                     	__size_of_main	equ	__end_of_main-_main
+   381                           	
+   382  0796                     _main:	
+   383                           	opt	stack 6
+   384                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   385                           	line	19
+   386                           	
+   387  0796                     l2681:	
+   388                           ;SPI 4-digit 7seg.c: 19: SPI_init();
+   389  0796  120A  118A  2770   	fcall	_SPI_init
+              120A  118A         
+   390                           	line	20
+   391                           ;SPI 4-digit 7seg.c: 20: SPI_Write(ar2[0],arr[0]);
+   392  079B  1283               	bcf	status, 5	;RP0=0, select bank0
+   393  079C  1303               	bcf	status, 6	;RP1=0, select bank0
+   394  079D  0820               	movf	(_arr),w
+   395  079E  00F3               	movwf	(??_main+0)+0
+   396  079F  0873               	movf	(??_main+0)+0,w
+   397  07A0  00F0               	movwf	(?_SPI_Write)
+   398  07A1  0834               	movf	(_ar2),w
+   399  07A2  120A  118A  272F   	fcall	_SPI_Write
+              120A  118A         
+   400                           	line	21
+   401                           ;SPI 4-digit 7seg.c: 21: SPI_Write(ar2[1],arr[1]);
+   402  07A7  1283               	bcf	status, 5	;RP0=0, select bank0
+   403  07A8  1303               	bcf	status, 6	;RP1=0, select bank0
+   404  07A9  0822               	movf	0+(_arr)+02h,w
+   405  07AA  00F3               	movwf	(??_main+0)+0
+   406  07AB  0873               	movf	(??_main+0)+0,w
+   407  07AC  00F0               	movwf	(?_SPI_Write)
+   408  07AD  0836               	movf	0+(_ar2)+02h,w
+   409  07AE  120A  118A  272F   	fcall	_SPI_Write
+              120A  118A         
+   410                           	line	22
+   411                           ;SPI 4-digit 7seg.c: 22: SPI_Write(ar2[2],arr[2]);
+   412  07B3  1283               	bcf	status, 5	;RP0=0, select bank0
+   413  07B4  1303               	bcf	status, 6	;RP1=0, select bank0
+   414  07B5  0824               	movf	0+(_arr)+04h,w
+   415  07B6  00F3               	movwf	(??_main+0)+0
+   416  07B7  0873               	movf	(??_main+0)+0,w
+   417  07B8  00F0               	movwf	(?_SPI_Write)
+   418  07B9  0838               	movf	0+(_ar2)+04h,w
+   419  07BA  120A  118A  272F   	fcall	_SPI_Write
+              120A  118A         
+   420                           	line	23
+   421                           ;SPI 4-digit 7seg.c: 23: SPI_Write(ar2[3],arr[3]);
+   422  07BF  1283               	bcf	status, 5	;RP0=0, select bank0
+   423  07C0  1303               	bcf	status, 6	;RP1=0, select bank0
+   424  07C1  0826               	movf	0+(_arr)+06h,w
+   425  07C2  00F3               	movwf	(??_main+0)+0
+   426  07C3  0873               	movf	(??_main+0)+0,w
+   427  07C4  00F0               	movwf	(?_SPI_Write)
+   428  07C5  083A               	movf	0+(_ar2)+06h,w
+   429  07C6  120A  118A  272F   	fcall	_SPI_Write
+              120A  118A         
+   430                           	line	24
+   431                           ;SPI 4-digit 7seg.c: 24: SPI_Write(ar2[4],arr[4]);
+   432  07CB  1283               	bcf	status, 5	;RP0=0, select bank0
+   433  07CC  1303               	bcf	status, 6	;RP1=0, select bank0
+   434  07CD  0828               	movf	0+(_arr)+08h,w
+   435  07CE  00F3               	movwf	(??_main+0)+0
+   436  07CF  0873               	movf	(??_main+0)+0,w
+   437  07D0  00F0               	movwf	(?_SPI_Write)
+   438  07D1  083C               	movf	0+(_ar2)+08h,w
+   439  07D2  120A  118A  272F   	fcall	_SPI_Write
+              120A  118A         
+   440                           	line	25
+   441                           ;SPI 4-digit 7seg.c: 25: SPI_Write(ar2[5],arr[5]);
+   442  07D7  1283               	bcf	status, 5	;RP0=0, select bank0
+   443  07D8  1303               	bcf	status, 6	;RP1=0, select bank0
+   444  07D9  082A               	movf	0+(_arr)+0Ah,w
+   445  07DA  00F3               	movwf	(??_main+0)+0
+   446  07DB  0873               	movf	(??_main+0)+0,w
+   447  07DC  00F0               	movwf	(?_SPI_Write)
+   448  07DD  083E               	movf	0+(_ar2)+0Ah,w
+   449  07DE  120A  118A  272F   	fcall	_SPI_Write
+              120A  118A         
+   450                           	line	26
+   451                           ;SPI 4-digit 7seg.c: 26: SPI_Write(ar2[6],arr[6]);
+   452  07E3  1283               	bcf	status, 5	;RP0=0, select bank0
+   453  07E4  1303               	bcf	status, 6	;RP1=0, select bank0
+   454  07E5  082C               	movf	0+(_arr)+0Ch,w
+   455  07E6  00F3               	movwf	(??_main+0)+0
+   456  07E7  0873               	movf	(??_main+0)+0,w
+   457  07E8  00F0               	movwf	(?_SPI_Write)
+   458  07E9  0840               	movf	0+(_ar2)+0Ch,w
+   459  07EA  120A  118A  272F   	fcall	_SPI_Write
+              120A  118A         
+   460                           	line	27
+   461                           ;SPI 4-digit 7seg.c: 27: SPI_Write(ar2[7],arr[7]);
+   462  07EF  1283               	bcf	status, 5	;RP0=0, select bank0
+   463  07F0  1303               	bcf	status, 6	;RP1=0, select bank0
+   464  07F1  082E               	movf	0+(_arr)+0Eh,w
+   465  07F2  00F3               	movwf	(??_main+0)+0
+   466  07F3  0873               	movf	(??_main+0)+0,w
+   467  07F4  00F0               	movwf	(?_SPI_Write)
+   468  07F5  0842               	movf	0+(_ar2)+0Eh,w
+   469  07F6  120A  118A  272F   	fcall	_SPI_Write
+              120A  118A         
+   470  07FB  2FFC               	goto	l696
+   471                           	line	28
+   472                           ;SPI 4-digit 7seg.c: 28: while(1)
+   473                           	
+   474  07FC                     l695:	
+   475                           	line	31
+   476                           ;SPI 4-digit 7seg.c: 29: {
+   477                           	
+   478  07FC                     l696:	
+   479                           	line	28
+   480  07FC  2FFC               	goto	l696
+   481                           	
+   482  07FD                     l697:	
+   483                           	line	32
+   484                           	
+   485  07FD                     l698:	
+   486                           	global	start
+   487  07FD  120A  118A  2800   	ljmp	start
+   488                           	opt stack 0
+   489                           GLOBAL	__end_of_main
+   490  0800                     	__end_of_main:
+   491 ;; =============== function _main ends ============
+   492                           
+   493                           	signat	_main,88
+   494                           	global	_SPI_init
+   495                           psect	text100,local,class=CODE,delta=2
+   496                           global __ptext100
+   497  0770                     __ptext100:
+   498                           
+   499 ;; *************** function _SPI_init *****************
+   500 ;; Defined at:
+   501 ;;		line 35 in file "SPI 4-digit 7seg.c"
+   502 ;; Parameters:    Size  Location     Type
+   503 ;;		None
+   504 ;; Auto vars:     Size  Location     Type
+   505 ;;		None
+   506 ;; Return value:  Size  Location     Type
+   507 ;;		None               void
+   508 ;; Registers used:
+   509 ;;		wreg, status,2, status,0, pclath, cstack
+   510 ;; Tracked objects:
+   511 ;;		On entry : 0/0
+   512 ;;		On exit  : 0/0
+   513 ;;		Unchanged: 0/0
+   514 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   515 ;;      Params:         0       0       0       0       0
+   516 ;;      Locals:         0       0       0       0       0
+   517 ;;      Temps:          1       0       0       0       0
+   518 ;;      Totals:         1       0       0       0       0
+   519 ;;Total ram usage:        1 bytes
+   520 ;; Hardware stack levels used:    1
+   521 ;; Hardware stack levels required when called:    1
+   522 ;; This function calls:
+   523 ;;		_SPI_Initialize_Master
+   524 ;;		_SPI_Write
+   525 ;; This function is called by:
+   526 ;;		_main
+   527 ;; This function uses a non-reentrant model
+   528 ;;
+   529                           psect	text100
+   530                           	file	"SPI 4-digit 7seg.c"
+   531                           	line	35
+   532                           	global	__size_of_SPI_init
+   533  0026                     	__size_of_SPI_init	equ	__end_of_SPI_init-_SPI_init
+   534                           	
+   535  0770                     _SPI_init:	
+   536                           	opt	stack 6
+   537                           ; Regs used in _SPI_init: [wreg+status,2+status,0+pclath+cstack]
+   538                           	line	36
+   539                           	
+   540  0770                     l2677:	
+   541                           ;SPI 4-digit 7seg.c: 36: RC2=1;
+   542  0770  1283               	bcf	status, 5	;RP0=0, select bank0
+   543  0771  1303               	bcf	status, 6	;RP1=0, select bank0
+   544  0772  1507               	bsf	(58/8),(58)&7
+   545                           	line	37
+   546                           	
+   547  0773                     l2679:	
+   548                           ;SPI 4-digit 7seg.c: 37: SPI_Initialize_Master();
+   549  0773  120A  118A  26FD   	fcall	_SPI_Initialize_Master
+              120A  118A         
+   550                           	line	38
+   551                           ;SPI 4-digit 7seg.c: 38: SPI_Write(0x0a,0xf);
+   552  0778  300F               	movlw	(0Fh)
+   553  0779  00F2               	movwf	(??_SPI_init+0)+0
+   554  077A  0872               	movf	(??_SPI_init+0)+0,w
+   555  077B  00F0               	movwf	(?_SPI_Write)
+   556  077C  300A               	movlw	(0Ah)
+   557  077D  120A  118A  272F   	fcall	_SPI_Write
+              120A  118A         
+   558                           	line	39
+   559                           ;SPI 4-digit 7seg.c: 39: SPI_Write(0x0b,0x07);
+   560  0782  3007               	movlw	(07h)
+   561  0783  00F2               	movwf	(??_SPI_init+0)+0
+   562  0784  0872               	movf	(??_SPI_init+0)+0,w
+   563  0785  00F0               	movwf	(?_SPI_Write)
+   564  0786  300B               	movlw	(0Bh)
+   565  0787  120A  118A  272F   	fcall	_SPI_Write
+              120A  118A         
+   566                           	line	40
+   567                           ;SPI 4-digit 7seg.c: 40: SPI_Write(0x0c,0x01);
+   568  078C  01F0               	clrf	(?_SPI_Write)
+   569  078D  1403               	bsf	status,0
+   570  078E  0DF0               	rlf	(?_SPI_Write),f
+   571  078F  300C               	movlw	(0Ch)
+   572  0790  120A  118A  272F   	fcall	_SPI_Write
+              120A  118A         
+   573                           	line	41
+   574                           	
+   575  0795                     l701:	
+   576  0795  0008               	return
+   577                           	opt stack 0
+   578                           GLOBAL	__end_of_SPI_init
+   579  0796                     	__end_of_SPI_init:
+   580 ;; =============== function _SPI_init ends ============
+   581                           
+   582                           	signat	_SPI_init,88
+   583                           	global	_SPI_Initialize_Master
+   584                           psect	text101,local,class=CODE,delta=2
+   585                           global __ptext101
+   586  06FD                     __ptext101:
+   587                           
+   588 ;; *************** function _SPI_Initialize_Master *****************
+   589 ;; Defined at:
+   590 ;;		line 44 in file "SPI 4-digit 7seg.c"
+   591 ;; Parameters:    Size  Location     Type
+   592 ;;		None
+   593 ;; Auto vars:     Size  Location     Type
+   594 ;;		None
+   595 ;; Return value:  Size  Location     Type
+   596 ;;		None               void
+   597 ;; Registers used:
+   598 ;;		wreg, status,2
+   599 ;; Tracked objects:
+   600 ;;		On entry : 0/0
+   601 ;;		On exit  : 0/0
+   602 ;;		Unchanged: 0/0
+   603 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   604 ;;      Params:         0       0       0       0       0
+   605 ;;      Locals:         0       0       0       0       0
+   606 ;;      Temps:          0       0       0       0       0
+   607 ;;      Totals:         0       0       0       0       0
+   608 ;;Total ram usage:        0 bytes
+   609 ;; Hardware stack levels used:    1
+   610 ;; This function calls:
+   611 ;;		Nothing
+   612 ;; This function is called by:
+   613 ;;		_SPI_init
+   614 ;; This function uses a non-reentrant model
+   615 ;;
+   616                           psect	text101
+   617                           	file	"SPI 4-digit 7seg.c"
+   618                           	line	44
+   619                           	global	__size_of_SPI_Initialize_Master
+   620  000D                     	__size_of_SPI_Initialize_Master	equ	__end_of_SPI_Initialize_Master-_SPI_Initialize_Mast
+                                 er
+   621                           	
+   622  06FD                     _SPI_Initialize_Master:	
+   623                           	opt	stack 6
+   624                           ; Regs used in _SPI_Initialize_Master: [wreg+status,2]
+   625                           	line	45
+   626                           	
+   627  06FD                     l1785:	
+   628                           ;SPI 4-digit 7seg.c: 45: TRISC5 = 0;
+   629  06FD  1683               	bsf	status, 5	;RP0=1, select bank1
+   630  06FE  1303               	bcf	status, 6	;RP1=0, select bank1
+   631  06FF  1287               	bcf	(1085/8)^080h,(1085)&7
+   632                           	line	46
+   633                           ;SPI 4-digit 7seg.c: 46: TRISC2=0;
+   634  0700  1107               	bcf	(1082/8)^080h,(1082)&7
+   635                           	line	47
+   636                           	
+   637  0701                     l1787:	
+   638                           ;SPI 4-digit 7seg.c: 47: SSPSTAT = 0b00000000;
+   639  0701  0194               	clrf	(148)^080h	;volatile
+   640                           	line	48
+   641                           	
+   642  0702                     l1789:	
+   643                           ;SPI 4-digit 7seg.c: 48: SSPCON = 0b00100000;
+   644  0702  3020               	movlw	(020h)
+   645  0703  1283               	bcf	status, 5	;RP0=0, select bank0
+   646  0704  1303               	bcf	status, 6	;RP1=0, select bank0
+   647  0705  0094               	movwf	(20)	;volatile
+   648                           	line	49
+   649                           	
+   650  0706                     l1791:	
+   651                           ;SPI 4-digit 7seg.c: 49: TRISC3 = 0;
+   652  0706  1683               	bsf	status, 5	;RP0=1, select bank1
+   653  0707  1303               	bcf	status, 6	;RP1=0, select bank1
+   654  0708  1187               	bcf	(1083/8)^080h,(1083)&7
+   655                           	line	50
+   656                           	
+   657  0709                     l704:	
+   658  0709  0008               	return
+   659                           	opt stack 0
+   660                           GLOBAL	__end_of_SPI_Initialize_Master
+   661  070A                     	__end_of_SPI_Initialize_Master:
+   662 ;; =============== function _SPI_Initialize_Master ends ============
+   663                           
+   664                           	signat	_SPI_Initialize_Master,88
+   665                           	global	_SPI_Write
+   666                           psect	text102,local,class=CODE,delta=2
+   667                           global __ptext102
+   668  072F                     __ptext102:
+   669                           
+   670 ;; *************** function _SPI_Write *****************
+   671 ;; Defined at:
+   672 ;;		line 89 in file "SPI 4-digit 7seg.c"
+   673 ;; Parameters:    Size  Location     Type
+   674 ;;  cmd             1    wreg     unsigned char 
+   675 ;;  data            1    0[COMMON] unsigned char 
+   676 ;; Auto vars:     Size  Location     Type
+   677 ;;  cmd             1    1[COMMON] unsigned char 
+   678 ;; Return value:  Size  Location     Type
+   679 ;;		None               void
+   680 ;; Registers used:
+   681 ;;		wreg
+   682 ;; Tracked objects:
+   683 ;;		On entry : 0/0
+   684 ;;		On exit  : 0/0
+   685 ;;		Unchanged: 0/0
+   686 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   687 ;;      Params:         1       0       0       0       0
+   688 ;;      Locals:         1       0       0       0       0
+   689 ;;      Temps:          0       0       0       0       0
+   690 ;;      Totals:         2       0       0       0       0
+   691 ;;Total ram usage:        2 bytes
+   692 ;; Hardware stack levels used:    1
+   693 ;; This function calls:
+   694 ;;		Nothing
+   695 ;; This function is called by:
+   696 ;;		_main
+   697 ;;		_SPI_init
+   698 ;; This function uses a non-reentrant model
+   699 ;;
+   700                           psect	text102
+   701                           	file	"SPI 4-digit 7seg.c"
+   702                           	line	89
+   703                           	global	__size_of_SPI_Write
+   704  001D                     	__size_of_SPI_Write	equ	__end_of_SPI_Write-_SPI_Write
+   705                           	
+   706  072F                     _SPI_Write:	
+   707                           	opt	stack 7
+   708                           ; Regs used in _SPI_Write: [wreg]
+   709                           ;SPI_Write@cmd stored from wreg
+   710  072F  00F1               	movwf	(SPI_Write@cmd)
+   711                           	line	90
+   712                           	
+   713  0730                     l1779:	
+   714                           ;SPI 4-digit 7seg.c: 90: RC2=0;
+   715  0730  1283               	bcf	status, 5	;RP0=0, select bank0
+   716  0731  1303               	bcf	status, 6	;RP1=0, select bank0
+   717  0732  1107               	bcf	(58/8),(58)&7
+   718                           	line	91
+   719                           	
+   720  0733                     l1781:	
+   721                           ;SPI 4-digit 7seg.c: 91: SSPBUF = cmd;
+   722  0733  0871               	movf	(SPI_Write@cmd),w
+   723  0734  0093               	movwf	(19)	;volatile
+   724                           	line	92
+   725                           ;SPI 4-digit 7seg.c: 92: while ( !SSPSTATbits.BF );
+   726  0735  2F36               	goto	l726
+   727                           	
+   728  0736                     l727:	
+   729                           	
+   730  0736                     l726:	
+   731  0736  1683               	bsf	status, 5	;RP0=1, select bank1
+   732  0737  1303               	bcf	status, 6	;RP1=0, select bank1
+   733  0738  1C14               	btfss	(148)^080h,0	;volatile
+   734  0739  2F3B               	goto	u11
+   735  073A  2F3C               	goto	u10
+   736  073B                     u11:
+   737  073B  2F36               	goto	l726
+   738  073C                     u10:
+   739  073C  2F3D               	goto	l1783
+   740                           	
+   741  073D                     l728:	
+   742                           	line	93
+   743                           	
+   744  073D                     l1783:	
+   745                           ;SPI 4-digit 7seg.c: 93: SSPBUF = data;
+   746  073D  0870               	movf	(SPI_Write@data),w
+   747  073E  1283               	bcf	status, 5	;RP0=0, select bank0
+   748  073F  1303               	bcf	status, 6	;RP1=0, select bank0
+   749  0740  0093               	movwf	(19)	;volatile
+   750                           	line	94
+   751                           ;SPI 4-digit 7seg.c: 94: while ( !SSPSTATbits.BF );
+   752  0741  2F42               	goto	l729
+   753                           	
+   754  0742                     l730:	
+   755                           	
+   756  0742                     l729:	
+   757  0742  1683               	bsf	status, 5	;RP0=1, select bank1
+   758  0743  1303               	bcf	status, 6	;RP1=0, select bank1
+   759  0744  1C14               	btfss	(148)^080h,0	;volatile
+   760  0745  2F47               	goto	u21
+   761  0746  2F48               	goto	u20
+   762  0747                     u21:
+   763  0747  2F42               	goto	l729
+   764  0748                     u20:
+   765                           	
+   766  0748                     l731:	
+   767                           	line	95
+   768                           ;SPI 4-digit 7seg.c: 95: RC2=1;
+   769  0748  1283               	bcf	status, 5	;RP0=0, select bank0
+   770  0749  1303               	bcf	status, 6	;RP1=0, select bank0
+   771  074A  1507               	bsf	(58/8),(58)&7
+   772                           	line	96
+   773                           	
+   774  074B                     l732:	
+   775  074B  0008               	return
+   776                           	opt stack 0
+   777                           GLOBAL	__end_of_SPI_Write
+   778  074C                     	__end_of_SPI_Write:
+   779 ;; =============== function _SPI_Write ends ============
+   780                           
+   781                           	signat	_SPI_Write,8312
+   782                           psect	text103,local,class=CODE,delta=2
+   783                           global __ptext103
+   784  0000                     __ptext103:
+   785                           	global	btemp
+   786  007E                     	btemp set 07Eh
+   787                           
+   788                           	DABS	1,126,2	;btemp
+   789                           	global	wtemp0
+   790  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.83 build 10920 
+Symbol Table                                                                                   Sat Sep 26 12:34:54 2020
+
+                             pc 0002                     _SSPSTATbits 0094                              _RD 0C60  
+                            u10 073C                              u11 073B                              u20 0748  
+                            u21 0747                              _WR 0C61                              fsr 0004  
+                           l701 0795                             l704 0709                             l730 0742  
+                           l731 0748                             l732 074B                             l726 0736  
+                           l727 0736                             l728 073D                             l729 0742  
+                           l695 07FC                             l696 07FC                             l697 07FD  
+                           l698 07FD                             _GIE 005F                             _RC2 003A  
+                           _ar2 0034                             _arr 0020                             indf 0000  
+                          l1781 0733                            l1783 073D                            l1791 0706  
+                          l1785 06FD                            l2681 0796                            l1779 0730  
+                          l1787 0701                            l1789 0702                            l2677 0770  
+                          l2679 0773                            _WREN 0C62                            _main 0796  
+                          btemp 007E                            start 0000                           ?_main 0070  
+                         _EEADR 010D                           _CARRY 0018                           pclath 000A  
+              __end_of_SPI_init 0796                           status 0003                           wtemp0 007E  
+            __size_of_SPI_Write 001D                    __end_of_main 0800                          ??_main 0073  
+                        _EEDATA 010C                          _EECON1 018C                          _EECON2 018D  
+__size_of_SPI_Initialize_Master 000D                          _TRISC2 043A                          _TRISC3 043B  
+                        _TRISC5 043D   __end_of_SPI_Initialize_Master 070A                          _SSPCON 0014  
+                        _SSPBUF 0013                    SPI_Write@cmd 0071               __end_of_SPI_Write 074C  
+                __pcstackCOMMON 0070                    __pidataBANK0 074C                       ?_SPI_init 0070  
+                    __pmaintext 0796                      ??_SPI_init 0072                         _SSPSTAT 0094  
+                 SPI_Write@data 0070            end_of_initialization 0718                         init_ram 0720  
+                     _SPI_Write 072F           _SPI_Initialize_Master 06FD             start_initialization 070A  
+             __size_of_SPI_init 0026                      ?_SPI_Write 0070                     __pdataBANK0 0020  
+        ?_SPI_Initialize_Master 0070                       __ptext100 0770                       __ptext101 06FD  
+                     __ptext102 072F                       __ptext103 0000                     ??_SPI_Write 0071  
+                      _SPI_init 0770                       init_fetch 071C                   __size_of_main 006A  
+       ??_SPI_Initialize_Master 0070  

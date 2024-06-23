@@ -1,0 +1,37 @@
+#include<htc.h>
+void uart_init();
+void main()
+{
+	TRISC6=0;
+	TRISC7=1;
+	TRISD=0X00;
+	INTCON=0XC0;
+	PIE1=0X20;
+	uart_init();
+	while(1)
+	{
+	}
+}
+void uart_init()
+{
+	TXSTA=0X24;
+	RCSTA=0X90;
+	BRGH=1;
+	SPBRG=129;
+}
+void interrupt isr()
+{
+	unsigned char ch;
+	while(RCIF==0);
+	RCIF=0;
+	ch=RCREG;
+	if(ch=='A')
+	{
+		PORTD=0X00;
+	}
+	else if(ch=='B')
+	{
+		PORTD=0XFF;
+	}
+	RCIF=0;
+}

@@ -1,0 +1,185 @@
+[Header]
+MagicCookie={0b13fe8c-dfe0-40eb-8900-6712719559a7}
+Version=1.0
+[File000]
+Location=F:\Basic Microcontroller\PIC16F877A\LCD I2C\lcd i2c.p1
+Folder=Intermediary
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|lcd i2c.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString= C9=1
+TraceCmdString=
+DebugOptions=
+[File001]
+Location=F:\Basic Microcontroller\PIC16F877A\LCD I2C\LCD I2C.cof
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|lcd i2c.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString= C9=1
+TraceCmdString=
+DebugOptions=
+[File002]
+Location=F:\Basic Microcontroller\PIC16F877A\LCD I2C\LCD I2C.hex
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|lcd i2c.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString= C9=1
+TraceCmdString=
+DebugOptions=
+[File003]
+Location=F:\Basic Microcontroller\PIC16F877A\LCD I2C\LCD I2C.sym
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|lcd i2c.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString= C9=1
+TraceCmdString=
+DebugOptions=
+[File004]
+Location=F:\Basic Microcontroller\PIC16F877A\LCD I2C\LCD I2C.map
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|lcd i2c.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString= C9=1
+TraceCmdString=
+DebugOptions=
+[File005]
+Location=F:\Basic Microcontroller\PIC16F877A\LCD I2C\LCD I2C.hxl
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|lcd i2c.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString= C9=1
+TraceCmdString=
+DebugOptions=
+[File006]
+Location=F:\Basic Microcontroller\PIC16F877A\LCD I2C\startup.lst
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|lcd i2c.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString= C9=1
+TraceCmdString=
+DebugOptions=
+[File007]
+Location=F:\Basic Microcontroller\PIC16F877A\LCD I2C\startup.rlf
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|lcd i2c.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString= C9=1
+TraceCmdString=
+DebugOptions=
+[File008]
+Location=F:\Basic Microcontroller\PIC16F877A\LCD I2C\doprnt.p1
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|lcd i2c.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString= C9=1
+TraceCmdString=
+DebugOptions=
+[File009]
+Location=F:\Basic Microcontroller\PIC16F877A\LCD I2C\doprnt.pre
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|lcd i2c.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString= C9=1
+TraceCmdString=
+DebugOptions=
+[File010]
+Location=F:\Basic Microcontroller\PIC16F877A\LCD I2C\LCD I2C.obj
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|lcd i2c.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString= C9=1
+TraceCmdString=
+DebugOptions=
+[File011]
+Location=F:\Basic Microcontroller\PIC16F877A\LCD I2C\LCD I2C.lst
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|lcd i2c.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString= C9=1
+TraceCmdString=
+DebugOptions=
+[File012]
+Location=F:\Basic Microcontroller\PIC16F877A\LCD I2C\LCD I2C.rlf
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|lcd i2c.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString= C9=1
+TraceCmdString=
+DebugOptions=
+[File013]
+Location=F:\Basic Microcontroller\PIC16F877A\LCD I2C\LCD I2C.sdb
+Folder=Output
+DeviceName=PIC16F877A
+LanguageToolSuiteID={507D93FD-16F1-4270-980F-0C7C0207E6D3}
+LanguageToolID={0F51667C-2BAF-4EF8-A2C9-AB83788A793D}
+LanguageToolLocation=C:\Program Files (x86)\HI-TECH Software\PICC\9.82\bin\picc.exe
+PPAD=$(BINDIR)||$(TMPDIR)||$(AINDIR)||$(INCDIR)||$(LIBDIR)||$(LKRDIR)||
+SOLK=<src>|lcd i2c.c||<obj>||<lib>||<lkr>||
+SuiteArgsString=
+ToolArgsString= C9=1
+TraceCmdString=
+DebugOptions=

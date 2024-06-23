@@ -1,0 +1,20 @@
+_converter_disptu: CODE, 1873 0 175
+_uart_string: CODE, 731 0 39
+_converter_uarttu: CODE, 1698 0 175
+_uart_tx: CODE, 605 0 12
+_delay: CODE, 816 0 62
+_lcd_cmd: CODE, 631 0 21
+_lcd_dat: CODE, 652 0 21
+_main: CODE, 1222 0 96
+_adc_turb: CODE, 1430 0 134
+___lmul: CODE, 878 0 74
+_uart_init: CODE, 617 0 14
+_adc: CODE, 770 0 46
+_lcd_int: CODE, 673 0 25
+_show: CODE, 698 0 33
+___lldiv: CODE, 1318 0 112
+_adc_ph: CODE, 1564 0 134
+___llmod: CODE, 1128 0 94
+_converter_dispph: CODE, 1040 0 88
+_converter_uartph: CODE, 952 0 88
+Total: 1443

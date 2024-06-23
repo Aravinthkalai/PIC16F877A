@@ -1,0 +1,28 @@
+#include<htc.h>
+#define led RC0
+#define sw RD0
+void delay();
+void main()
+{
+	TRISD=0XFF;
+	while(1)
+	{
+	if(sw==0)
+	{
+		delay();
+		TRISC=0X00;
+		PORTD=0XFF;
+	}
+}
+}
+void delay()
+{
+	int s=0;
+	for(s=0;s<1000;s++)
+	{
+	OPTION_REG=0X04;
+	TMR0=100;
+	while(T0IF==0);
+	T0IF=0;
+	}
+}

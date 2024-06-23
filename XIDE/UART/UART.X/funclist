@@ -1,0 +1,5 @@
+_uart_tx: CODE, 1992 0 12
+_main: CODE, 2018 0 30
+_uart_rx: CODE, 1981 0 11
+_uart_init: CODE, 2004 0 14
+Total: 67

@@ -1,0 +1,11 @@
+_I2C_stop: CODE, 1785 0 9
+_lcd_send_cmd: CODE, 1918 0 65
+_lcd_send_data: CODE, 1983 0 65
+_I2C_Master_Wait: CODE, 1807 0 15
+_I2C_Master_Init: CODE, 1794 0 13
+_main: CODE, 1839 0 21
+_I2C_start: CODE, 1776 0 9
+_lcd_send_string: CODE, 1885 0 33
+_I2C_write: CODE, 1822 0 17
+_lcd_init: CODE, 1860 0 25
+Total: 272

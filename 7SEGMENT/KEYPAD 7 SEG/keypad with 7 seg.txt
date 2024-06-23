@@ -1,0 +1,59 @@
+#include<htc.h>
+#define R0 RD0
+#define R1 RD1
+#define R2 RD2
+#define R3 RD3
+#define C0 RD4
+#define C1 RD5
+#define C2 RD6
+void seg(unsigned int);
+void keypad();
+void delay(int a);
+void main()
+{
+	TRISD=0X00;
+	TRISC=0X00;
+	PORTD=0XFF;
+	PORTC=0XFF;
+	while(1)
+	{
+		keypad();
+	}
+}	
+void keypad()
+{	
+	R0=R1=R2=R3=1;
+	R0=0;
+	{
+	if(C0==0)
+	{
+		seg(0xf9);
+	}	
+	if(C1==0)
+		{
+			seg(0xa4);
+		}	
+	if(C2==0)
+	{
+		seg(0xb0);
+	}	
+	}	
+	
+}
+void seg(unsigned int ch)
+{
+	PORTC=0xff;
+	PORTC=ch;
+	delay(100);
+}
+void delay(int a)
+{
+	int i,j;
+	for(i=0;i<a;i++)
+	{
+		for(j=0;j<1000;j++)
+		{
+		}
+		
+	}
+}

@@ -1,0 +1,644 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.82 build 9453 
+                                                                                               Mon Dec 09 19:49:24 2019
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 9453
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 9453"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           	FNCALL	_main,_delay
+    43                           	FNROOT	_main
+    44                           	global	_PORTD
+    45                           psect	maintext,global,class=CODE,delta=2
+    46                           global __pmaintext
+    47  0775                     __pmaintext:
+    48  0008                     _PORTD	set	8
+    49                           	global	_CARRY
+    50  0018                     _CARRY	set	24
+    51                           	global	_GIE
+    52  005F                     _GIE	set	95
+    53                           	global	_TRISD
+    54  0088                     _TRISD	set	136
+    55                           	global	_EEADR
+    56  010D                     _EEADR	set	269
+    57                           	global	_EEDATA
+    58  010C                     _EEDATA	set	268
+    59                           	global	_EECON1
+    60  018C                     _EECON1	set	396
+    61                           	global	_EECON2
+    62  018D                     _EECON2	set	397
+    63                           	global	_RD
+    64  0C60                     _RD	set	3168
+    65                           	global	_WR
+    66  0C61                     _WR	set	3169
+    67                           	global	_WREN
+    68  0C62                     _WREN	set	3170
+    69                           	file	"common cathode.as"
+    70                           	line	#
+    71                           psect cinit,class=CODE,delta=2
+    72                           global start_initialization
+    73  0733                     start_initialization:
+    74                           
+    75                           psect cinit,class=CODE,delta=2
+    76                           global end_of_initialization
+    77                           
+    78                           ;End of C runtime variable initialization code
+    79                           
+    80  0733                     end_of_initialization:
+    81  0733  0183               clrf status
+    82  0734  120A  118A  2F75   ljmp _main	;jump to C main() function
+    83                           psect	cstackCOMMON,class=COMMON,space=1
+    84                           global __pcstackCOMMON
+    85  0070                     __pcstackCOMMON:
+    86                           	global	?_delay
+    87  0070                     ?_delay:	; 0 bytes @ 0x0
+    88                           	global	?_main
+    89  0070                     ?_main:	; 0 bytes @ 0x0
+    90                           	global	delay@a
+    91  0070                     delay@a:	; 2 bytes @ 0x0
+    92  0070                     	ds	2
+    93                           	global	??_delay
+    94  0072                     ??_delay:	; 0 bytes @ 0x2
+    95  0072                     	ds	1
+    96                           	global	delay@i
+    97  0073                     delay@i:	; 2 bytes @ 0x3
+    98  0073                     	ds	2
+    99                           	global	delay@j
+   100  0075                     delay@j:	; 2 bytes @ 0x5
+   101  0075                     	ds	2
+   102                           	global	??_main
+   103  0077                     ??_main:	; 0 bytes @ 0x7
+   104 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+   105 ;;Auto spaces:   Size  Autos    Used
+   106 ;; COMMON          14      7       7
+   107 ;; BANK0           80      0       0
+   108 ;; BANK1           80      0       0
+   109 ;; BANK3           96      0       0
+   110 ;; BANK2           96      0       0
+   111                           
+   112 ;;
+   113 ;; Pointer list with targets:
+   114                           
+   115                           
+   116                           
+   117 ;;
+   118 ;; Critical Paths under _main in COMMON
+   119 ;;
+   120 ;;   _main->_delay
+   121 ;;
+   122 ;; Critical Paths under _main in BANK0
+   123 ;;
+   124 ;;   None.
+   125 ;;
+   126 ;; Critical Paths under _main in BANK1
+   127 ;;
+   128 ;;   None.
+   129 ;;
+   130 ;; Critical Paths under _main in BANK3
+   131 ;;
+   132 ;;   None.
+   133 ;;
+   134 ;; Critical Paths under _main in BANK2
+   135 ;;
+   136 ;;   None.
+   137                           
+   138 ;;
+   139 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   140 ;;
+   141                           
+   142 ;;
+   143 ;;Call Graph Tables:
+   144 ;;
+   145 ;; ---------------------------------------------------------------------------------
+   146 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   147 ;; ---------------------------------------------------------------------------------
+   148 ;; (0) _main                                                 0     0      0      60
+   149 ;;                              _delay
+   150 ;; ---------------------------------------------------------------------------------
+   151 ;; (1) _delay                                                7     5      2      60
+   152 ;;                                              0 COMMON     7     5      2
+   153 ;; ---------------------------------------------------------------------------------
+   154 ;; Estimated maximum stack depth 1
+   155 ;; ---------------------------------------------------------------------------------
+   156                           
+   157 ;; Call Graph Graphs:
+   158                           
+   159 ;; _main (ROOT)
+   160 ;;   _delay
+   161 ;;
+   162                           
+   163 ;; Address spaces:
+   164                           
+   165 ;;Name               Size   Autos  Total    Cost      Usage
+   166 ;;BITCOMMON            E      0       0       0        0.0%
+   167 ;;EEDATA             100      0       0       0        0.0%
+   168 ;;NULL                 0      0       0       0        0.0%
+   169 ;;CODE                 0      0       0       0        0.0%
+   170 ;;COMMON               E      7       7       1       50.0%
+   171 ;;BITSFR0              0      0       0       1        0.0%
+   172 ;;SFR0                 0      0       0       1        0.0%
+   173 ;;BITSFR1              0      0       0       2        0.0%
+   174 ;;SFR1                 0      0       0       2        0.0%
+   175 ;;STACK                0      0       1       2        0.0%
+   176 ;;ABS                  0      0       0       3        0.0%
+   177 ;;BITBANK0            50      0       0       4        0.0%
+   178 ;;BITSFR3              0      0       0       4        0.0%
+   179 ;;SFR3                 0      0       0       4        0.0%
+   180 ;;BANK0               50      0       0       5        0.0%
+   181 ;;BITSFR2              0      0       0       5        0.0%
+   182 ;;SFR2                 0      0       0       5        0.0%
+   183 ;;BITBANK1            50      0       0       6        0.0%
+   184 ;;BANK1               50      0       0       7        0.0%
+   185 ;;BITBANK3            60      0       0       8        0.0%
+   186 ;;BANK3               60      0       0       9        0.0%
+   187 ;;BITBANK2            60      0       0      10        0.0%
+   188 ;;BANK2               60      0       0      11        0.0%
+   189 ;;DATA                 0      0       0      12        0.0%
+   190                           
+   191                           	global	_main
+   192                           psect	maintext
+   193                           
+   194 ;; *************** function _main *****************
+   195 ;; Defined at:
+   196 ;;		line 4 in file "F:\Basic Microcontroller\PIC16F877A\7SEGMENT\common cathode\common cathode.c"
+   197 ;; Parameters:    Size  Location     Type
+   198 ;;		None
+   199 ;; Auto vars:     Size  Location     Type
+   200 ;;		None
+   201 ;; Return value:  Size  Location     Type
+   202 ;;		None               void
+   203 ;; Registers used:
+   204 ;;		wreg, status,2, status,0, btemp+1, pclath, cstack
+   205 ;; Tracked objects:
+   206 ;;		On entry : 17F/0
+   207 ;;		On exit  : 0/0
+   208 ;;		Unchanged: 0/0
+   209 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   210 ;;      Params:         0       0       0       0       0
+   211 ;;      Locals:         0       0       0       0       0
+   212 ;;      Temps:          0       0       0       0       0
+   213 ;;      Totals:         0       0       0       0       0
+   214 ;;Total ram usage:        0 bytes
+   215 ;; Hardware stack levels required when called:    1
+   216 ;; This function calls:
+   217 ;;		_delay
+   218 ;; This function is called by:
+   219 ;;		Startup code after reset
+   220 ;; This function uses a non-reentrant model
+   221 ;;
+   222                           psect	maintext
+   223                           	file	"F:\Basic Microcontroller\PIC16F877A\7SEGMENT\common cathode\common cathode.c"
+   224                           	line	4
+   225                           	global	__size_of_main
+   226  008B                     	__size_of_main	equ	__end_of_main-_main
+   227                           	
+   228  0775                     _main:	
+   229                           	opt	stack 7
+   230                           ; Regs used in _main: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+   231                           	line	5
+   232                           	
+   233  0775                     l2617:	
+   234                           ;common cathode.c: 5: TRISD=0X00;
+   235  0775  1683               	bsf	status, 5	;RP0=1, select bank1
+   236  0776  1303               	bcf	status, 6	;RP1=0, select bank1
+   237  0777  0188               	clrf	(136)^080h	;volatile
+   238  0778  2F79               	goto	l2619
+   239                           	line	6
+   240                           ;common cathode.c: 6: while(1)
+   241                           	
+   242  0779                     l687:	
+   243                           	line	8
+   244                           	
+   245  0779                     l2619:	
+   246                           ;common cathode.c: 7: {
+   247                           ;common cathode.c: 8: PORTD=0x3f;
+   248  0779  303F               	movlw	(03Fh)
+   249  077A  1283               	bcf	status, 5	;RP0=0, select bank0
+   250  077B  1303               	bcf	status, 6	;RP1=0, select bank0
+   251  077C  0088               	movwf	(8)	;volatile
+   252                           	line	9
+   253                           	
+   254  077D                     l2621:	
+   255                           ;common cathode.c: 9: delay(100);
+   256  077D  3064               	movlw	low(064h)
+   257  077E  00F0               	movwf	(?_delay)
+   258  077F  3000               	movlw	high(064h)
+   259  0780  00F1               	movwf	((?_delay))+1
+   260  0781  120A  118A  2737   	fcall	_delay
+              120A  118A         
+   261                           	line	10
+   262                           	
+   263  0786                     l2623:	
+   264                           ;common cathode.c: 10: PORTD=0x06;
+   265  0786  3006               	movlw	(06h)
+   266  0787  1283               	bcf	status, 5	;RP0=0, select bank0
+   267  0788  1303               	bcf	status, 6	;RP1=0, select bank0
+   268  0789  0088               	movwf	(8)	;volatile
+   269                           	line	11
+   270                           	
+   271  078A                     l2625:	
+   272                           ;common cathode.c: 11: delay(100);
+   273  078A  3064               	movlw	low(064h)
+   274  078B  00F0               	movwf	(?_delay)
+   275  078C  3000               	movlw	high(064h)
+   276  078D  00F1               	movwf	((?_delay))+1
+   277  078E  120A  118A  2737   	fcall	_delay
+              120A  118A         
+   278                           	line	12
+   279                           	
+   280  0793                     l2627:	
+   281                           ;common cathode.c: 12: PORTD=0x5b;
+   282  0793  305B               	movlw	(05Bh)
+   283  0794  1283               	bcf	status, 5	;RP0=0, select bank0
+   284  0795  1303               	bcf	status, 6	;RP1=0, select bank0
+   285  0796  0088               	movwf	(8)	;volatile
+   286                           	line	13
+   287                           	
+   288  0797                     l2629:	
+   289                           ;common cathode.c: 13: delay(100);
+   290  0797  3064               	movlw	low(064h)
+   291  0798  00F0               	movwf	(?_delay)
+   292  0799  3000               	movlw	high(064h)
+   293  079A  00F1               	movwf	((?_delay))+1
+   294  079B  120A  118A  2737   	fcall	_delay
+              120A  118A         
+   295                           	line	14
+   296                           	
+   297  07A0                     l2631:	
+   298                           ;common cathode.c: 14: PORTD=0x4f;
+   299  07A0  304F               	movlw	(04Fh)
+   300  07A1  1283               	bcf	status, 5	;RP0=0, select bank0
+   301  07A2  1303               	bcf	status, 6	;RP1=0, select bank0
+   302  07A3  0088               	movwf	(8)	;volatile
+   303                           	line	15
+   304                           	
+   305  07A4                     l2633:	
+   306                           ;common cathode.c: 15: delay(100);
+   307  07A4  3064               	movlw	low(064h)
+   308  07A5  00F0               	movwf	(?_delay)
+   309  07A6  3000               	movlw	high(064h)
+   310  07A7  00F1               	movwf	((?_delay))+1
+   311  07A8  120A  118A  2737   	fcall	_delay
+              120A  118A         
+   312                           	line	16
+   313                           	
+   314  07AD                     l2635:	
+   315                           ;common cathode.c: 16: PORTD=0x66;
+   316  07AD  3066               	movlw	(066h)
+   317  07AE  1283               	bcf	status, 5	;RP0=0, select bank0
+   318  07AF  1303               	bcf	status, 6	;RP1=0, select bank0
+   319  07B0  0088               	movwf	(8)	;volatile
+   320                           	line	17
+   321                           	
+   322  07B1                     l2637:	
+   323                           ;common cathode.c: 17: delay(100);
+   324  07B1  3064               	movlw	low(064h)
+   325  07B2  00F0               	movwf	(?_delay)
+   326  07B3  3000               	movlw	high(064h)
+   327  07B4  00F1               	movwf	((?_delay))+1
+   328  07B5  120A  118A  2737   	fcall	_delay
+              120A  118A         
+   329                           	line	18
+   330                           	
+   331  07BA                     l2639:	
+   332                           ;common cathode.c: 18: PORTD=0x6d;
+   333  07BA  306D               	movlw	(06Dh)
+   334  07BB  1283               	bcf	status, 5	;RP0=0, select bank0
+   335  07BC  1303               	bcf	status, 6	;RP1=0, select bank0
+   336  07BD  0088               	movwf	(8)	;volatile
+   337                           	line	19
+   338                           	
+   339  07BE                     l2641:	
+   340                           ;common cathode.c: 19: delay(100);
+   341  07BE  3064               	movlw	low(064h)
+   342  07BF  00F0               	movwf	(?_delay)
+   343  07C0  3000               	movlw	high(064h)
+   344  07C1  00F1               	movwf	((?_delay))+1
+   345  07C2  120A  118A  2737   	fcall	_delay
+              120A  118A         
+   346                           	line	20
+   347                           	
+   348  07C7                     l2643:	
+   349                           ;common cathode.c: 20: PORTD=0x7c;
+   350  07C7  307C               	movlw	(07Ch)
+   351  07C8  1283               	bcf	status, 5	;RP0=0, select bank0
+   352  07C9  1303               	bcf	status, 6	;RP1=0, select bank0
+   353  07CA  0088               	movwf	(8)	;volatile
+   354                           	line	21
+   355                           	
+   356  07CB                     l2645:	
+   357                           ;common cathode.c: 21: delay(100);
+   358  07CB  3064               	movlw	low(064h)
+   359  07CC  00F0               	movwf	(?_delay)
+   360  07CD  3000               	movlw	high(064h)
+   361  07CE  00F1               	movwf	((?_delay))+1
+   362  07CF  120A  118A  2737   	fcall	_delay
+              120A  118A         
+   363                           	line	22
+   364                           	
+   365  07D4                     l2647:	
+   366                           ;common cathode.c: 22: PORTD=0x07;
+   367  07D4  3007               	movlw	(07h)
+   368  07D5  1283               	bcf	status, 5	;RP0=0, select bank0
+   369  07D6  1303               	bcf	status, 6	;RP1=0, select bank0
+   370  07D7  0088               	movwf	(8)	;volatile
+   371                           	line	23
+   372                           	
+   373  07D8                     l2649:	
+   374                           ;common cathode.c: 23: delay(100);
+   375  07D8  3064               	movlw	low(064h)
+   376  07D9  00F0               	movwf	(?_delay)
+   377  07DA  3000               	movlw	high(064h)
+   378  07DB  00F1               	movwf	((?_delay))+1
+   379  07DC  120A  118A  2737   	fcall	_delay
+              120A  118A         
+   380                           	line	24
+   381                           	
+   382  07E1                     l2651:	
+   383                           ;common cathode.c: 24: PORTD=0x7f;
+   384  07E1  307F               	movlw	(07Fh)
+   385  07E2  1283               	bcf	status, 5	;RP0=0, select bank0
+   386  07E3  1303               	bcf	status, 6	;RP1=0, select bank0
+   387  07E4  0088               	movwf	(8)	;volatile
+   388                           	line	25
+   389                           	
+   390  07E5                     l2653:	
+   391                           ;common cathode.c: 25: delay(100);
+   392  07E5  3064               	movlw	low(064h)
+   393  07E6  00F0               	movwf	(?_delay)
+   394  07E7  3000               	movlw	high(064h)
+   395  07E8  00F1               	movwf	((?_delay))+1
+   396  07E9  120A  118A  2737   	fcall	_delay
+              120A  118A         
+   397                           	line	26
+   398                           	
+   399  07EE                     l2655:	
+   400                           ;common cathode.c: 26: PORTD=0x6f;
+   401  07EE  306F               	movlw	(06Fh)
+   402  07EF  1283               	bcf	status, 5	;RP0=0, select bank0
+   403  07F0  1303               	bcf	status, 6	;RP1=0, select bank0
+   404  07F1  0088               	movwf	(8)	;volatile
+   405                           	line	27
+   406                           	
+   407  07F2                     l2657:	
+   408                           ;common cathode.c: 27: delay(100);
+   409  07F2  3064               	movlw	low(064h)
+   410  07F3  00F0               	movwf	(?_delay)
+   411  07F4  3000               	movlw	high(064h)
+   412  07F5  00F1               	movwf	((?_delay))+1
+   413  07F6  120A  118A  2737   	fcall	_delay
+              120A  118A         
+   414  07FB  2F79               	goto	l2619
+   415                           	line	28
+   416                           	
+   417  07FC                     l688:	
+   418                           	line	6
+   419  07FC  2F79               	goto	l2619
+   420                           	
+   421  07FD                     l689:	
+   422                           	line	29
+   423                           	
+   424  07FD                     l690:	
+   425                           	global	start
+   426  07FD  120A  118A  2800   	ljmp	start
+   427                           	opt stack 0
+   428                           GLOBAL	__end_of_main
+   429  0800                     	__end_of_main:
+   430 ;; =============== function _main ends ============
+   431                           
+   432                           	signat	_main,88
+   433                           	global	_delay
+   434                           psect	text71,local,class=CODE,delta=2
+   435                           global __ptext71
+   436  0737                     __ptext71:
+   437                           
+   438 ;; *************** function _delay *****************
+   439 ;; Defined at:
+   440 ;;		line 31 in file "F:\Basic Microcontroller\PIC16F877A\7SEGMENT\common cathode\common cathode.c"
+   441 ;; Parameters:    Size  Location     Type
+   442 ;;  a               2    0[COMMON] int 
+   443 ;; Auto vars:     Size  Location     Type
+   444 ;;  j               2    5[COMMON] int 
+   445 ;;  i               2    3[COMMON] int 
+   446 ;; Return value:  Size  Location     Type
+   447 ;;		None               void
+   448 ;; Registers used:
+   449 ;;		wreg, status,2, btemp+1
+   450 ;; Tracked objects:
+   451 ;;		On entry : 0/0
+   452 ;;		On exit  : 0/0
+   453 ;;		Unchanged: 0/0
+   454 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   455 ;;      Params:         2       0       0       0       0
+   456 ;;      Locals:         4       0       0       0       0
+   457 ;;      Temps:          1       0       0       0       0
+   458 ;;      Totals:         7       0       0       0       0
+   459 ;;Total ram usage:        7 bytes
+   460 ;; Hardware stack levels used:    1
+   461 ;; This function calls:
+   462 ;;		Nothing
+   463 ;; This function is called by:
+   464 ;;		_main
+   465 ;; This function uses a non-reentrant model
+   466 ;;
+   467                           psect	text71
+   468                           	file	"F:\Basic Microcontroller\PIC16F877A\7SEGMENT\common cathode\common cathode.c"
+   469                           	line	31
+   470                           	global	__size_of_delay
+   471  003E                     	__size_of_delay	equ	__end_of_delay-_delay
+   472                           	
+   473  0737                     _delay:	
+   474                           	opt	stack 7
+   475                           ; Regs used in _delay: [wreg+status,2+btemp+1]
+   476                           	line	33
+   477                           	
+   478  0737                     l1745:	
+   479                           ;common cathode.c: 32: int i,j;
+   480                           ;common cathode.c: 33: for(i=0;i<a;i++)
+   481  0737  01F3               	clrf	(delay@i)
+   482  0738  01F4               	clrf	(delay@i+1)
+   483  0739  2F65               	goto	l693
+   484                           	line	34
+   485                           	
+   486  073A                     l694:	
+   487                           	line	35
+   488                           	
+   489  073A                     l1747:	
+   490                           ;common cathode.c: 34: {
+   491                           ;common cathode.c: 35: for(j=0;j<1000;j++)
+   492  073A  01F5               	clrf	(delay@j)
+   493  073B  01F6               	clrf	(delay@j+1)
+   494                           	
+   495  073C                     l1749:	
+   496  073C  0876               	movf	(delay@j+1),w
+   497  073D  3A80               	xorlw	80h
+   498  073E  00FF               	movwf	btemp+1
+   499  073F  3083               	movlw	(high(03E8h))^80h
+   500  0740  027F               	subwf	btemp+1,w
+   501  0741  1D03               	skipz
+   502  0742  2F45               	goto	u15
+   503  0743  30E8               	movlw	low(03E8h)
+   504  0744  0275               	subwf	(delay@j),w
+   505  0745                     u15:
+   506                           
+   507  0745  1C03               	skipc
+   508  0746  2F48               	goto	u11
+   509  0747  2F49               	goto	u10
+   510  0748                     u11:
+   511  0748  2F4B               	goto	l1753
+   512  0749                     u10:
+   513  0749  2F5F               	goto	l1757
+   514                           	
+   515  074A                     l1751:	
+   516  074A  2F5F               	goto	l1757
+   517                           	line	36
+   518                           	
+   519  074B                     l695:	
+   520                           	line	35
+   521                           	
+   522  074B                     l1753:	
+   523                           ;common cathode.c: 36: {
+   524  074B  3001               	movlw	low(01h)
+   525  074C  07F5               	addwf	(delay@j),f
+   526  074D  1803               	skipnc
+   527  074E  0AF6               	incf	(delay@j+1),f
+   528  074F  3000               	movlw	high(01h)
+   529  0750  07F6               	addwf	(delay@j+1),f
+   530                           	
+   531  0751                     l1755:	
+   532  0751  0876               	movf	(delay@j+1),w
+   533  0752  3A80               	xorlw	80h
+   534  0753  00FF               	movwf	btemp+1
+   535  0754  3083               	movlw	(high(03E8h))^80h
+   536  0755  027F               	subwf	btemp+1,w
+   537  0756  1D03               	skipz
+   538  0757  2F5A               	goto	u25
+   539  0758  30E8               	movlw	low(03E8h)
+   540  0759  0275               	subwf	(delay@j),w
+   541  075A                     u25:
+   542                           
+   543  075A  1C03               	skipc
+   544  075B  2F5D               	goto	u21
+   545  075C  2F5E               	goto	u20
+   546  075D                     u21:
+   547  075D  2F4B               	goto	l1753
+   548  075E                     u20:
+   549  075E  2F5F               	goto	l1757
+   550                           	
+   551  075F                     l696:	
+   552                           	line	33
+   553                           	
+   554  075F                     l1757:	
+   555  075F  3001               	movlw	low(01h)
+   556  0760  07F3               	addwf	(delay@i),f
+   557  0761  1803               	skipnc
+   558  0762  0AF4               	incf	(delay@i+1),f
+   559  0763  3000               	movlw	high(01h)
+   560  0764  07F4               	addwf	(delay@i+1),f
+   561                           	
+   562  0765                     l693:	
+   563  0765  0874               	movf	(delay@i+1),w
+   564  0766  3A80               	xorlw	80h
+   565  0767  00F2               	movwf	(??_delay+0)+0
+   566  0768  0871               	movf	(delay@a+1),w
+   567  0769  3A80               	xorlw	80h
+   568  076A  0272               	subwf	(??_delay+0)+0,w
+   569  076B  1D03               	skipz
+   570  076C  2F6F               	goto	u35
+   571  076D  0870               	movf	(delay@a),w
+   572  076E  0273               	subwf	(delay@i),w
+   573  076F                     u35:
+   574                           
+   575  076F  1C03               	skipc
+   576  0770  2F72               	goto	u31
+   577  0771  2F73               	goto	u30
+   578  0772                     u31:
+   579  0772  2F3A               	goto	l1747
+   580  0773                     u30:
+   581  0773  2F74               	goto	l698
+   582                           	
+   583  0774                     l697:	
+   584                           	line	40
+   585                           	
+   586  0774                     l698:	
+   587  0774  0008               	return
+   588                           	opt stack 0
+   589                           GLOBAL	__end_of_delay
+   590  0775                     	__end_of_delay:
+   591 ;; =============== function _delay ends ============
+   592                           
+   593                           	signat	_delay,4216
+   594                           psect	text72,local,class=CODE,delta=2
+   595                           global __ptext72
+   596  0000                     __ptext72:
+   597                           	global	btemp
+   598  007E                     	btemp set 07Eh
+   599                           
+   600                           	DABS	1,126,2	;btemp
+   601                           	global	wtemp0
+   602  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.82 build 9453 
+Symbol Table                                                                                   Mon Dec 09 19:49:24 2019
+
+                  _RD 0C60                    u10 0749                    u11 0748                    u20 075E  
+                  u21 075D                    u30 0773                    u31 0772                    u15 0745  
+                  u25 075A                    u35 076F                    _WR 0C61                   l690 07FD  
+                 l693 0765                   l694 073A                   l695 074B                   l687 0779  
+                 l696 075F                   l688 07FC                   l697 0774                   l689 07FD  
+                 l698 0774                   _GIE 005F                  l2621 077D                  l1751 074A  
+                l2631 07A0                  l2623 0786                  l1753 074B                  l1745 0737  
+                l2641 07BE                  l2633 07A4                  l2625 078A                  l2617 0775  
+                l1755 0751                  l1747 073A                  l2651 07E1                  l2643 07C7  
+                l2635 07AD                  l2627 0793                  l2619 0779                  l1757 075F  
+                l1749 073C                  l2653 07E5                  l2645 07CB                  l2637 07B1  
+                l2629 0797                  l2655 07EE                  l2647 07D4                  l2639 07BA  
+                l2657 07F2                  l2649 07D8                  _WREN 0C62                  _main 0775  
+                btemp 007E                  start 0000                 ?_main 0070                 _EEADR 010D  
+               _CARRY 0018                 _PORTD 0008                 _TRISD 0088                 _delay 0737  
+               status 0003                 wtemp0 007E          __end_of_main 0800                ??_main 0077  
+              ?_delay 0070                _EEDATA 010C                _EECON1 018C                _EECON2 018D  
+              delay@a 0070                delay@i 0073                delay@j 0075        __pcstackCOMMON 0070  
+       __end_of_delay 0775               ??_delay 0072            __pmaintext 0775  end_of_initialization 0733  
+ start_initialization 0733        __size_of_delay 003E              __ptext71 0737              __ptext72 0000  
+       __size_of_main 008B  

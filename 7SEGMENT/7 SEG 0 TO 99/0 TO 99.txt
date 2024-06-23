@@ -1,0 +1,36 @@
+#include<htc.h>
+void delay(int a);
+void main()
+{
+	TRISD=0X00;
+	TRISC=0X00;
+	char array[]={0x40,0xf9,0x24,0x30,0x19,0x12,0x03,0xf8,0x00,0x10};
+	int k,l;
+	PORTD=0xff;
+	PORTC=0xff;
+	for(k=0;k<10;k++)
+		{
+	PORTD=array[k];
+	for(l=0;l<10;l++)
+		{
+			PORTC=array[l];
+			delay(200);
+		}
+}
+	while(1)//OFF LOOP
+	{
+		PORTD=0XFF;
+		PORTC=0XFF;
+	}
+}
+void delay(int a)
+{
+	int i,j;
+	for(i=0;i<a;i++)
+	{
+		for(j=0;j<1000;j++)
+		{
+		}
+		
+	}
+}

@@ -1,0 +1,12 @@
+_uart_tx: CODE, 1163 0 12
+_delay: CODE, 1305 0 62
+_lcd_cmd: CODE, 1205 0 21
+_lcd_dat: CODE, 1226 0 21
+_main: CODE, 1367 0 129
+_uart_rx: CODE, 1152 0 11
+_uart_init: CODE, 1175 0 14
+_lcd_int: CODE, 1247 0 25
+_show: CODE, 1272 0 33
+_in: CODE, 1496 0 242
+_out: CODE, 1738 0 310
+Total: 880

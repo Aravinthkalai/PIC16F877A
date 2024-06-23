@@ -1,0 +1,26 @@
+#include<htc.h>
+void delay();
+void main()
+{
+	while(1)
+	{
+TRISD=0X00;
+PORTD=0X00;
+delay();
+PORTD=0XFF;
+delay();
+}
+}
+void delay()
+{
+	int i;
+	for(i=0;i<100;i++)//10SEC LOOP
+	{
+	T1CON=0X30;
+	TMR1H=0X0B;//100MS
+	TMR1L=0XDC;
+	TMR1ON=1;
+	while(TMR1IF==0);
+	TMR1IF=0;
+}
+}

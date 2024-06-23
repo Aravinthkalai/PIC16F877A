@@ -1,0 +1,18 @@
+#include<pic.h>
+void interrupt  ISR(void)
+{
+    PORTD=~PORTD;
+    INTF=0;
+}
+ 
+ 
+void main(void)
+{
+    TRISB0=1;
+    TRISD=0X00;
+    OPTION_REG=0X00;
+    INTCON=0XD0;
+    while(1)
+     {
+   	}
+}

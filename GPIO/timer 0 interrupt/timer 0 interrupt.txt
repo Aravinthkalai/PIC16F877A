@@ -1,0 +1,39 @@
+#include<htc.h>
+#define led RC0 
+void delay(int a);
+void main()
+{
+TRISC=0X00;//setting output port then only led will work
+TRISD=0X00;//setting output port
+PORTC=0X00;//turning off portc
+OPTION_REG=0X04;//prescalar 16
+TMR0=-56;//1ms calculation with 16 as prescalar or if 32 use 100 as value
+INTCON=0Xe0;//GIE, PIE,TMRIE all are enabled
+while(1)
+{
+PORTD=0Xff;
+delay(1000);
+PORTD=0x00;
+delay(1000);
+}
+}
+void interrupt timer_isr()
+{
+if(TMR0IF==1)
+{
+led=~led;
+TMR0=-55;//reload timer value
+TMR0IF=0;//clearing timers interrupt overflow bit 
+}
+}
+void delay(int a)
+{
+	int i,j;
+	for(i=0;i<a;i++)
+	{
+		for(j=0;j<1000;j++)
+		{
+		}
+		
+	}
+}

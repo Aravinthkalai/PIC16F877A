@@ -1,0 +1,20 @@
+#include<htc.h>
+void delay();
+void main()
+{
+while(1)
+{
+TRISD=0X00;
+PORTD=0XFF;
+delay();
+PORTD=0X00;
+delay();
+}
+}
+void delay()
+{
+OPTION_REG=0x01;
+TMR0=-56;//or we can use TMR0=100 both gives 1ms time delay
+while(T0IF==0);
+T0IF=0;
+}
